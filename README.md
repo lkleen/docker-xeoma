@@ -8,13 +8,11 @@ You can try out Xeoma using the trial version of the software, then purchase it 
 
 ## Running
 
-There are two modes of running this container. The first is with environment variables:
+The container requires to set 2 envorinment variables. 
+- VERSION='latest' or a specific version number like '22.12.5'. Set a version number for production use as an automatic update might update the major version. If you have already bought a license the server becomes useless then.
+- PASSWORD='yourpassword'. Your pasword to access the xeoma server.
 
 `docker run -d --name=Xeoma -p 8090:8090 -p 10090:10090 -v /local/path/to/config:/config -v /local/path/to/archive:/archive -e VERSION='latest' -e PASSWORD='<password>' coppit/xeoma`
-
-The second mode is with a config file. To create a template config file, run:
-
-`docker run -d --name=Xeoma -p 8090:8090 -p 10090:10090 -v /local/path/to/config:/config -v /local/path/to/archive:/archive coppit/xeoma`
 
 When run for the first time, a file named xeoma.conf will be created in the config dir, and the container will exit. Edit this file, setting the client password, and changing `VERSION` if you want to run a different version of Xeoma (see below). Then rerun the command.
 
