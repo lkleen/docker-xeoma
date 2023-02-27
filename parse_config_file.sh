@@ -63,7 +63,7 @@ create_and_validate_config_file() {
   # Check to see if they didn't edit the config file
   if diff "$TEMPLATE_CONFIG_FILE" "$CONFIG_FILE" >/dev/null
   then
-    echo "Please edit the config file to specify your settings"
+    echo "Please edit the config file $TEMPLATE_CONFIG_FILE to match the downloaded $CONFIG_FILE."
     exit 3
   fi
 

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t coppit/xeoma .
+docker build -t lkleen/xeoma .
