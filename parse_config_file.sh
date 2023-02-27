@@ -15,7 +15,7 @@ validate_values() {
   then
     echo "Missing required settings, which must be provided in the config file or by environment variables:"
     echo "$REQUIRED_SETTINGS"
-    exit 0
+    exit 1
   fi
 }
 
@@ -108,7 +108,7 @@ then
   exit 0
 fi
 
-create_and_validate_config_file
+#create_and_validate_config_file
 
 merge_config_vars_and_env_vars $SAFE_CONFIG_FILE
 
