@@ -1,6 +1,6 @@
 FROM phusion/baseimage:0.11
 
-MAINTAINER David Coppit <david@coppit.org>
+MAINTAINER Lars Kleen <github@larsworks.org>
 
 ENV TERM=xterm-256color
 
@@ -39,10 +39,6 @@ COPY xeoma.conf.default /files/
 COPY parse_config_file.sh /etc/my_init.d/30_parse_config_file.sh
 COPY 40_install_xeoma.py 50_configure_xeoma.sh /etc/my_init.d/
 RUN chmod +x /etc/my_init.d/30_parse_config_file.sh /etc/my_init.d/40_install_xeoma.py /etc/my_init.d/50_configure_xeoma.sh
-
-# Add a cron job for updating Xeoma
-COPY update_xeoma.sh /etc/cron.hourly/update_xeoma
-RUN chmod +x /etc/cron.hourly/update_xeoma
 
 COPY xeoma.sh /etc/service/xeoma/run
 RUN chmod +x /etc/service/xeoma/run

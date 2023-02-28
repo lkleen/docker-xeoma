@@ -108,7 +108,7 @@ then
   exit 0
 fi
 
-#create_and_validate_config_file
+create_and_validate_config_file
 
 merge_config_vars_and_env_vars $SAFE_CONFIG_FILE
 
